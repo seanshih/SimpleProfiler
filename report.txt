@@ -1,0 +1,47 @@
+=================================
+CS391 Assignment 3
+180006613 Hsi-Hung Shih
+=================================
+
+a. To integrate the profiler, just do the following.
+    1. Include profiler.h
+    2. Create an insatnce in the root function of the program (like main()). 
+       e.g. Profiler profiler(10000, "profiler_report.txt");
+    3. When the profiler is destructed, it will show a pie chart with default
+    explorer.
+
+    The constructor has two parameters, one is number of samples, and the other one is file name.
+
+b. 
+This profiler is a sampling profiler. It works by creating a new thread and
+sample and store the main thread's EIP instruction at fixed intervals. When
+the profiler is destructed, the SymFromAddr() function will be called to get
+function name for each eip address and calculate number of samples associated
+with them.
+
+c. The profiler report was written to a text file. It contains information
+about percentage of samples observed lying in each function. Furthermore, a
+pie chart will be generated and shown at the end of the program through
+default browser.
+
+**NOTE: This script assumes "sh" is accessible in PATH! If the report_gen.sh does
+not work properly, consider execute it with cygwin bash, or install newest
+version of win-bash.
+
+**NOTE: The machine should be connected to the Internet when the pie chart is
+generated
+
+**NOTE: If the html is opened with internet explorer, the content may be
+blocked. In this situation, click on "Allow Blocked Content" and it will run
+as normal.
+
+**NOTE: The script expect to find profiled_report.txt for pie chart
+generation.
+
+d. Extra credit
+
+1. Pie chart will be generated at the end of the program, or through running
+"sh report_gen.sh" after profiled_report.txt is generated.
+
+2. Profiler used for our game engine, the results are in
+extra_credit_profiled_report.txt and extra_credit_piechart.html

@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Title');
+        data.addColumn('number', 'Value');
+        data.addRows([
+             ["NtDelayExecution", 61.9], ["Fluid::GetNeighbors", 17.7], ["Fluid::ComputeForce", 7.1], ["RtlCompareMemoryUlong", 2.0], ["Fluid::ComputeDensity", 1.9], ["Fluid::UpdateGrid", 1.5], ["ZwWaitForSingleObject", 0.8], ["Fluid::SqrtDist", 0.6], ["Fluid::Integrate", 0.5], ["RtlFillMemoryUlong", 0.5], ["ZwQuerySystemInformation", 0.4], ["NVAPI_Thunk", 0.3], ["D3DKMTEscape", 0.3], ["D3DKMTCreateAllocation2", 0.3], ["ZwQueryInformationThread", 0.3], ["ZwUnmapViewOfSection", 0.3], ["D3DKMTPresent", 0.2], ["AvcGetJumpCode", 0.2], ["Thread32Next", 0.2], ["RenderFluid", 0.2], ["NtMapViewOfSection", 0.2], ["D3DKMTRender", 0.2], ["ZwQueryVirtualMemory", 0.1], ["ZwOpenKeyEx", 0.1], ["D3DDisassemble10Effect", 0.1], ["D3DKMTCreateContext", 0.1], ["NtSetInformationThread", 0.1], ["std::vector<DXUTSpriteVertex", 0.1], ["ZwDeviceIoControlFile", 0.1], ["NtCreateFile", 0.1], ["memcmp", 0.1], ["RtlpNtMakeTemporaryKey", 0.1], ["RtlNtStatusToDosErrorNoTeb", 0.1], ["CopyAcceleratorTableW", 0.1], ["NtOpenThread", 0.0], ["D3DKMTDestroyAllocation", 0.0], ["memcpy", 0.0], ["OpenAdapter10", 0.0], ["OnFrameMove", 0.0], ["D3DKMTReclaimAllocations", 0.0], ["D3DKMTDestroyContext", 0.0], ["ZwClose", 0.0], ["RtlInterlockedPopEntrySList", 0.0], ["RtlFreeUnicodeString", 0.0], ["QueryShadowPlayInterfaceVersionRange", 0.0], ["NtAllocateVirtualMemory", 0.0], ["InterlockedCompareExchange", 0.0], ["DXUTRender3DEnvironment", 0.0], ["D3DPerformance_BeginEvent", 0.0], ["getc_nolock", 0.0], ["ZwQueryAttributesFile", 0.0], ["ShowWindow", 0.0], ["RtlLeaveCriticalSection", 0.0], ["RtlInitializeSListHead", 0.0], ["RtlFreeHandle", 0.0], ["RtlEnterCriticalSection", 0.0], ["RtlCreateUserThread", 0.0], ["RtlAllocateHandle", 0.0], ["RtlAcquireSRWLockExclusive", 0.0], ["NtQueryInformationProcess", 0.0], ["LdrProcessRelocationBlockEx", 0.0], ["GetLastError", 0.0], ["DXGIReportAdapterConfiguration", 0.0], ["D3DKMTUnlock", 0.0], ["D3DKMTLock", 0.0], ["D3DKMTGetDeviceState", 0.0], ["wcsstr", 0.0], ["vswprintf_s", 0.0], ["strcmpi", 0.0], ["memcpy_s", 0.0], ["gapfnScSendMessage", 0.0], ["fputwc_nolock", 0.0], ["floor", 0.0], ["_libm_sse2_powf", 0.0], ["ZwWaitForMultipleObjects", 0.0], ["ZwReleaseSemaphore", 0.0], ["ZwOpenMutant", 0.0], ["ZwOpenFile", 0.0], ["ZwCreateSection", 0.0], ["WaitForSingleObject", 0.0], ["TpCheckTerminateWorker", 0.0], ["TlsGetValue", 0.0], ["SetRect", 0.0], ["SetLastError", 0.0], ["SetInfoQueue", 0.0], ["RtlSetLastWin32Error", 0.0], ["RtlReleaseSRWLockExclusive", 0.0], ["RtlRandomEx", 0.0], ["RtlQueryEnvironmentVariable_U", 0.0], ["RtlProcessFlsData", 0.0], ["RtlGetVersion", 0.0], ["RtlDeactivateActivationContextUnsafeFast", 0.0], ["RtlCompareMemory", 0.0], ["RtlAllocateHeap", 0.0], ["PeekMessageW", 0.0], ["Ordinal1005", 0.0], ["NtQueryDirectoryFile", 0.0], ["NtProtectVirtualMemory", 0.0], ["NtEnumerateKey", 0.0], ["NtCreateThreadEx", 0.0], ["Module32Next", 0.0], ["InterlockedExchange", 0.0], ["HungWindowFromGhostWindow", 0.0], ["GetVersionExA", 0.0], ["GetVersion", 0.0], ["GetTickCount", 0.0], ["GetProcessVersion", 0.0], ["GetDC", 0.0], ["GetCurrentThreadId", 0.0], ["GetCurrentProcess", 0.0], ["EndText11", 0.0], ["DestroyWindow", 0.0], ["DeleteObject", 0.0], ["DXUTUpdateFrameStats", 0.0], ["DXUTGetD3D11Device", 0.0], ["DXUTBlendColor::Blend", 0.0], ["D3DLayerGetInterface", 0.0], ["D3DKMTOpenResource2", 0.0], ["D3DKMTDestroyDevice", 0.0], ["D3D11CoreGetLayeredDeviceSize", 0.0], ["CheckETWTLS", 0.0],
+        ]);
+
+        // Set chart options
+        var options = {'title':'Sampling Report',
+                       'width':1200,
+                       'height':600};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+
+  <body>
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div"></div>
+  </body>
+</html>
+
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Title');
+        data.addColumn('number', 'Value');
+        data.addRows([
+             ["Fluid::GetNeighbors", 58.2], ["Fluid::ComputeForce", 18.8], ["Fluid::ComputeDensity", 5.6], ["Fluid::UpdateGrid", 2.7], ["Fluid::Integrate", 2.0], ["RtlCompareMemoryUlong", 2.0], ["Fluid::SqrtDist", 1.9], ["ZwWaitForSingleObject", 0.7], ["D3DKMTPresent", 0.7], ["RenderFluid", 0.6], ["NVAPI_Thunk", 0.6], ["RtlFillMemoryUlong", 0.4], ["D3DKMTRender", 0.4], ["ZwQuerySystemInformation", 0.4], ["ZwQueryInformationThread", 0.4], ["D3DKMTEscape", 0.4], ["ZwUnmapViewOfSection", 0.3], ["OpenAdapter10", 0.2], ["NtMapViewOfSection", 0.2], ["ZwQueryVirtualMemory", 0.2], ["Thread32Next", 0.2], ["AvcGetJumpCode", 0.2], ["std::vector<DXUTSpriteVertex", 0.2], ["D3DKMTCreateAllocation2", 0.1], ["D3DKMTCreateContext", 0.1], ["ZwOpenKeyEx", 0.1], ["D3DDisassemble10Effect", 0.1], ["ZwClose", 0.1], ["RtlNtStatusToDosErrorNoTeb", 0.1], ["NtQueryInformationProcess", 0.1], ["NtOpenThread", 0.1], ["D3DPerformance_BeginEvent", 0.1], ["ZwQueryAttributesFile", 0.1], ["RtlAllocateHeap", 0.1], ["HungWindowFromGhostWindow", 0.1], ["DrawText11DXUT", 0.1], ["D3DKMTLock", 0.1], ["D3DKMTDestroyAllocation", 0.1], ["CopyAcceleratorTableW", 0.1], ["RtlInterlockedPopEntrySList", 0.0], ["wcsspn", 0.0], ["ZwDeviceIoControlFile", 0.0], ["NtSetInformationThread", 0.0], ["NtCreateFile", 0.0], ["DestroyWindow", 0.0], ["DXGIReportAdapterConfiguration", 0.0], ["memcpy", 0.0], ["memcmp", 0.0], ["ZwWow64CallFunction64", 0.0], ["ZwReleaseSemaphore", 0.0], ["ShowWindow", 0.0], ["RtlpNtMakeTemporaryKey", 0.0], ["RtlEnterCriticalSection", 0.0], ["D3DKMTUnlock", 0.0], ["D3DKMTGetDeviceState", 0.0], ["D3DKMTDestroyContext", 0.0], ["ZwWaitForMultipleObjects", 0.0], ["RtlSetLastWin32Error", 0.0], ["RtlProcessFlsData", 0.0], ["RtlInterlockedCompareExchange64", 0.0], ["RtlFreeHandle", 0.0], ["RtlCompareMemory", 0.0], ["RtlAllocateHandle", 0.0], ["RtlAcquireSRWLockExclusive", 0.0], ["NtFreeVirtualMemory", 0.0], ["NtCreateThreadEx", 0.0], ["InterlockedDecrement", 0.0], ["GetVersion", 0.0], ["D3DKMTDestroySynchronizationObject", 0.0], ["msize", 0.0], ["memset", 0.0], ["memcpy_s", 0.0], ["getptd", 0.0], ["gapfnScSendMessage", 0.0], ["fputwc_nolock", 0.0], ["_ultod3", 0.0], ["ZwQueryObject", 0.0], ["ZwQueryFullAttributesFile", 0.0], ["ZwGetCurrentProcessorNumber", 0.0], ["SetThreadAffinityMask", 0.0], ["RtlZeroHeap", 0.0], ["RtlTryEnterCriticalSection", 0.0], ["RtlLookupElementGenericTable", 0.0], ["RtlInitializeCriticalSectionEx", 0.0], ["RtlInitUnicodeStringEx", 0.0], ["RtlGetUserInfoHeap", 0.0], ["RtlGetNtGlobalFlags", 0.0], ["RtlFreeHeap", 0.0], ["RtlCreateUserThread", 0.0], ["RtlAcquireSRWLockShared", 0.0], ["ReleaseSemaphore", 0.0], ["QueryShadowPlayInterfaceVersionRange", 0.0], ["QueryPerformanceCounter", 0.0], ["NtTraceControl", 0.0], ["NtEnumerateKey", 0.0], ["NtAllocateVirtualMemory", 0.0], ["LdrProcessRelocationBlockEx", 0.0], ["IsWindow", 0.0], ["InterlockedExchange", 0.0], ["GetThreadPriority", 0.0], ["GetLastError", 0.0], ["EtwSetMark", 0.0], ["EnumDisplayDevicesW", 0.0], ["DXUTState::SetCurrentFrameNumber", 0.0], ["DXUTState::GetRenderingPaused", 0.0], ["DXUTState::GetCurrentDeviceSettings", 0.0], ["DXUTIsVsyncEnabled", 0.0], ["D3DLayerGetInterface", 0.0], ["D3DKMTWaitForSynchronizationObject2", 0.0], ["D3DKMTReclaimAllocations", 0.0], ["D3DKMTDestroyDevice", 0.0], ["D3DKMTCreateSynchronizationObject2", 0.0], ["CreateDXGIFactory1", 0.0], ["CDXUTDialogResourceManager::ApplyRenderUI11", 0.0], ["CDXUTDialog::DrawTextW", 0.0],
+        ]);
+
+        // Set chart options
+        var options = {'title':'Sampling Report',
+                       'width':1200,
+                       'height':600};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+
+  <body>
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div"></div>
+  </body>
+</html>
+
