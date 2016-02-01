@@ -5,6 +5,8 @@ It works by creating a new thread and sample and store the main thread's EIP ins
 
 When the profiler is destructed, the **SymFromAddr()** function will be called to get function name for each eip address and calculate number of samples associated with them.
 
+Note that I only work on the **Profiler.cpp** and **Profiler.h**. The other parts are for testing purpose.
+
 ## Usage
 
 To integrate the profiler, just do the following.
