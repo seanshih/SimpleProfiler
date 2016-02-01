@@ -33,3 +33,7 @@ If the **report_gen.sh** does not work properly, consider execute it with cygwin
 ## Others
 Check out my other [portfolios](http://seanshih.com)! 
 
+## Discliamer
+
+The fluid simulation part is not part of my work.  It is given by the instructor for testing purpose.
+
