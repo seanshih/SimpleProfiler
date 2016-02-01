@@ -1,4 +1,4 @@
-## SimpleProfiler
+# SimpleProfiler
 
 This profiler is a sampling profiler.  
 It works by creating a new thread and sample and store the main thread's EIP instruction at fixed intervals.  
